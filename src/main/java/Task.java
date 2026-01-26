@@ -2,30 +2,32 @@ public class Task {
     private String taskDescription;
     private boolean isDone;
 
-    public Task(String taskDescription){
+    public Task(String taskDescription) {
         this.isDone = false;
         this.taskDescription = taskDescription;
     }
-    public void markTask(){
+
+    public void markTask() {
         this.isDone = true;
     }
 
-    public void unmarkTask(){
+    public void unmarkTask() {
         this.isDone = false;
     }
 
-    public boolean isDone(){
+    public boolean isDone() {
         return this.isDone;
     }
 
-    public String getTaskDescription(){
+    public String getTaskDescription() {
         return taskDescription;
     }
-    public String getStatusIcon(){
+
+    public String getStatusIcon() {
         return isDone ? "[X]" : "[ ]";
     }
 
-    public String displayString(){
+    public String displayString() {
         return getStatusIcon() + " " + getTaskDescription();
     }
 }
