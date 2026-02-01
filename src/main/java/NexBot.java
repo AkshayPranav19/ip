@@ -32,7 +32,7 @@ public class NexBot {
             System.out.println(INDENT + "No tasks for you. NexBot wants you to take a good rest");
         } else {
             for (int i = 0; i < taskCount; i += 1) {
-                System.out.printf(INDENT + "%d. %s%n", i + 1, tasks[i].displayString());
+                System.out.printf(INDENT + "%d. %s%n", i + 1, tasks[i].toString());
             }
         }
     }
@@ -68,33 +68,55 @@ public class NexBot {
                 printBye();
                 scanner.close();
                 return;
+
             case "list":
                 printTasks(tasks, taskCount);
                 break;
+
             case "mark":
                 if (isNumeric(secondCommand)) {
                     int markIndex = Integer.parseInt(secondCommand) - 1;
                     tasks[markIndex].markTask();
                     System.out.println(INDENT + "Nice! I've marked this task as done:");
-                    System.out.println(INDENT + INDENT + tasks[markIndex].displayString());
+                    System.out.println(INDENT + INDENT + tasks[markIndex].toString());
                 }
                 break;
+
             case "unmark":
                 if (isNumeric(secondCommand)) {
                     int unmarkIndex = Integer.parseInt(secondCommand) - 1;
                     tasks[unmarkIndex].unmarkTask();
                     System.out.println(INDENT + "OK, I've marked this task as not done yet:");
-                    System.out.println(INDENT + INDENT + tasks[unmarkIndex].displayString());
+                    System.out.println(INDENT + INDENT + tasks[unmarkIndex].toString());
                 }
                 break;
-            case "add":
-                if (!secondCommand.isEmpty()) {
-                    Task newTask = new Task(secondCommand);
-                    tasks[taskCount] = newTask;
-                    taskCount += 1;
-                    System.out.println(INDENT + "Added: " + userInput);
-                }
+
+            case "todo":
+                tasks[taskCount] = new toDo(secondCommand);
+                System.out.println(INDENT + "Got it. I've added this task:");
+                System.out.println(INDENT + INDENT + tasks[taskCount].toString());
+                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
+                taskCount += 1;
                 break;
+
+            case "deadline":
+                String[] deadlineTask = secondCommand.split(" /by ", 2);
+                tasks[taskCount] = new Deadline(deadlineTask[0], deadlineTask[1]);
+                System.out.println(INDENT + "Got it. I've added this task:");
+                System.out.println(INDENT + INDENT + tasks[taskCount].toString());
+                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
+                taskCount += 1;
+                break;
+
+            case "event":
+                String[] eventTask = secondCommand.split(" /from | /to ", 3);
+                tasks[taskCount] = new Event(eventTask[0], eventTask[1], eventTask[2]);
+                System.out.println(INDENT + "Got it. I've added this task:");
+                System.out.println(INDENT + INDENT + tasks[taskCount].toString());
+                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
+                taskCount += 1;
+                break;
+
             default:
                 break;
             }
