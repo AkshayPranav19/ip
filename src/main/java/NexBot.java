@@ -1,4 +1,3 @@
-import javax.swing.plaf.PanelUI;
 import java.util.Scanner;
 
 public class NexBot {
@@ -92,11 +91,11 @@ public class NexBot {
                 break;
 
             case "todo":
-                tasks[taskCount] = new toDo(secondCommand);
+                tasks[taskCount] = new ToDo(secondCommand);
                 System.out.println(INDENT + "Got it. I've added this task:");
                 System.out.println(INDENT + INDENT + tasks[taskCount].toString());
-                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
                 taskCount += 1;
+                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
                 break;
 
             case "deadline":
@@ -104,8 +103,8 @@ public class NexBot {
                 tasks[taskCount] = new Deadline(deadlineTask[0], deadlineTask[1]);
                 System.out.println(INDENT + "Got it. I've added this task:");
                 System.out.println(INDENT + INDENT + tasks[taskCount].toString());
-                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
                 taskCount += 1;
+                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
                 break;
 
             case "event":
@@ -113,8 +112,8 @@ public class NexBot {
                 tasks[taskCount] = new Event(eventTask[0], eventTask[1], eventTask[2]);
                 System.out.println(INDENT + "Got it. I've added this task:");
                 System.out.println(INDENT + INDENT + tasks[taskCount].toString());
-                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
                 taskCount += 1;
+                System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
                 break;
 
             default:
