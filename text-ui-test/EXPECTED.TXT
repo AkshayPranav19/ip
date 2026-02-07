@@ -6,7 +6,7 @@
       | |\  |  __/>  < | |_) | (_) | |_
       |_| \_|\___/_/\_\|____/ \___/ \__|
 
-     NexBot is your personal task manager. I'm here to help. What can I do for you?
+     nexbot.NexBot is your personal task manager. I'm here to help. What can I do for you?
      ____________________________________________________________
      ____________________________________________________________
      Got it. I've added this task:
@@ -75,10 +75,10 @@
       todo <description>
      ____________________________________________________________
      ____________________________________________________________
-     NexBot is upset! You Entered a wrong task number!
+     nexbot.NexBot is upset! You Entered a wrong task number!
      ____________________________________________________________
      ____________________________________________________________
-     NexBot is upset! You Entered a wrong task number!
+     nexbot.NexBot is upset! You Entered a wrong task number!
      ____________________________________________________________
      ____________________________________________________________
      You used Invalid command format. Learn the correct Format:
@@ -93,9 +93,9 @@
       todo <description>
      ____________________________________________________________
      ____________________________________________________________
-     NexBot thinks this is an unknown syntax. Give correct Syntax!
+     nexbot.NexBot thinks this is an unknown syntax. Give correct Syntax!
      ____________________________________________________________
      ____________________________________________________________
      Bye. Hope to see you again soon!
-     Shutting down NexBot...
+     Shutting down nexbot.NexBot...
      ____________________________________________________________

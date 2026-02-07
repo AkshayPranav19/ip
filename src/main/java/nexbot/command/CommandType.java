@@ -1,3 +1,5 @@
+package nexbot.command;
+
 public enum CommandType {
     BYE,
     LIST,

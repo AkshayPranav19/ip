@@ -1,3 +1,11 @@
+package nexbot;
+
+import nexbot.command.Command;
+import nexbot.command.Executor;
+import nexbot.command.Parser;
+import nexbot.exception.NexBotException;
+import nexbot.ui.Printer;
+
 import java.util.Scanner;
 
 public class NexBot {

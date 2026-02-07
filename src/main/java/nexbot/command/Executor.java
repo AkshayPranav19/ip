@@ -1,3 +1,14 @@
+package nexbot.command;
+
+import nexbot.exception.InvalidTaskNumberException;
+import nexbot.exception.NexBotException;
+import nexbot.exception.TaskLimitException;
+import nexbot.task.Deadline;
+import nexbot.task.Event;
+import nexbot.task.Task;
+import nexbot.task.ToDo;
+import nexbot.ui.Printer;
+
 public class Executor {
 
     private static final int MAX_TASKS = 100;
@@ -11,7 +22,7 @@ public class Executor {
         printer.showGreeting();
     }
 
-    public void execute(Command command) throws NexBotException{
+    public void execute(Command command) throws NexBotException {
 
         switch (command.getType()) {
         case BYE:

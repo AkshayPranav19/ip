@@ -1,3 +1,7 @@
+package nexbot.ui;
+
+import nexbot.task.Task;
+
 public class Printer {
     public static final String INDENT = "     ";
     public static final String DIVIDER_LINE = "____________________________________________________________";
@@ -12,21 +16,21 @@ public class Printer {
         System.out.println(INDENT + DIVIDER_LINE);
         System.out.println(INDENT + "Hello! I'm");
         System.out.println(logo);
-        System.out.println(INDENT + "NexBot is your personal task manager. I'm here to help. What can I do for you?");
+        System.out.println(INDENT + "nexbot.NexBot is your personal task manager. I'm here to help. What can I do for you?");
         System.out.println(INDENT + DIVIDER_LINE);
     }
 
     public void showBye() {
         System.out.println(INDENT + DIVIDER_LINE);
         System.out.println(INDENT + "Bye. Hope to see you again soon!");
-        System.out.println(INDENT + "Shutting down NexBot...");
+        System.out.println(INDENT + "Shutting down nexbot.NexBot...");
         System.out.println(INDENT + DIVIDER_LINE);
     }
 
     public void showTasks(Task[] tasks, int taskCount) {
         System.out.println(INDENT + DIVIDER_LINE);
         if (taskCount == 0) {
-            System.out.println(INDENT + "No tasks for you. NexBot wants you to take a good rest");
+            System.out.println(INDENT + "No tasks for you. nexbot.NexBot wants you to take a good rest");
         } else {
             for (int i = 0; i < taskCount; i += 1) {
                 System.out.printf(INDENT + "%d. %s%n", i + 1, tasks[i].toString());

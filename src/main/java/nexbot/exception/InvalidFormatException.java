@@ -1,3 +1,5 @@
+package nexbot.exception;
+
 public class InvalidFormatException extends NexBotException {
 
     public InvalidFormatException(String usage) {

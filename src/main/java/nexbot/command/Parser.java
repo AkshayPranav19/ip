@@ -1,3 +1,10 @@
+package nexbot.command;
+
+import nexbot.exception.InvalidCommandException;
+import nexbot.exception.InvalidFormatException;
+import nexbot.exception.InvalidTaskNumberException;
+import nexbot.exception.NexBotException;
+
 public class Parser {
     public static final String INDENT = "     ";
     public static final String TODO_FORMAT = INDENT + "todo <description>";
