@@ -1,51 +1,43 @@
 public class Command {
     private final CommandType type;
-    private final String arg1;
-    private final String arg2;
-    private final String arg3;
+    private final String param1;
+    private final String param2;
+    private final String param3;
 
+
+    public Command(CommandType type, String param1, String param2, String param3) {
+        this.type = type;
+        this.param1 = param1;
+        this.param2 = param2;
+        this.param3 = param3;
+    }
+
+    public Command(CommandType type, String param1, String param2) {
+        this(type, param1, param2, "");
+    }
+
+    public Command(CommandType type, String param1) {
+        this(type, param1, "", "");
+    }
 
     public Command(CommandType type) {
-        this.type = type;
-        this.arg1 = "";
-        this.arg2 = "";
-        this.arg3 = "";
+        this(type, "", "", "");
     }
 
-    public Command(CommandType type, String arg1) {
-        this.type = type;
-        this.arg1 = arg1;
-        this.arg2 = "";
-        this.arg3 = "";
-    }
-
-    public Command(CommandType type, String arg1, String arg2) {
-        this.type = type;
-        this.arg1 = arg1;
-        this.arg2 = arg2;
-        this.arg3 = "";
-    }
-
-    public Command(CommandType type, String arg1, String arg2, String arg3) {
-        this.type = type;
-        this.arg1 = arg1;
-        this.arg2 = arg2;
-        this.arg3 = arg3;
-    }
 
     public CommandType getType() {
         return type;
     }
 
-    public String getArg1() {
-        return arg1;
+    public String getParam1() {
+        return param1;
     }
 
-    public String getArg2() {
-        return arg2;
+    public String getParam2() {
+        return param2;
     }
 
-    public String getArg3() {
-        return arg3;
+    public String getParam3() {
+        return param3;
     }
 }

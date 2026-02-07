@@ -1,9 +1,9 @@
 public class Executor {
 
-    public static final int MAX_TASKS = 100;
+    private static final int MAX_TASKS = 100;
     private static final Printer printer = new Printer();
-    public static Task[] tasks = new Task[MAX_TASKS];
-    public static int taskCount = 0;
+    private static final Task[] tasks = new Task[MAX_TASKS];
+    private static int taskCount = 0;
     private boolean shouldExit;
 
     public Executor() {
@@ -12,7 +12,9 @@ public class Executor {
     }
 
     public static boolean isNumeric(String s) {
-        if (s == null || s.isEmpty()) return false;
+        if (s == null || s.isEmpty()) {
+            return false;
+        }
         try {
             Integer.parseInt(s);
             return true;
@@ -34,40 +36,25 @@ public class Executor {
             break;
 
         case MARK:
-            if (isNumeric(command.getArg1())) {
-                int markIndex = Integer.parseInt(command.getArg1()) - 1;
-                tasks[markIndex].markTask();
-                printer.showMarked(tasks[markIndex]);
-            }
+            updateMarkStatus(command, true);
             break;
 
         case UNMARK:
-            if (isNumeric(command.getArg1())) {
-                int unmarkIndex = Integer.parseInt(command.getArg1()) - 1;
-                tasks[unmarkIndex].unmarkTask();
-                printer.showUnmarked(tasks[unmarkIndex]);
-            }
+            updateMarkStatus(command, false);
             break;
 
         case TODO:
-            tasks[taskCount] = new ToDo(command.getArg1());
-            taskCount += 1;
-            printer.showAdded(tasks[taskCount - 1], taskCount);
+            addTask(new ToDo(command.getParam1()));
             break;
 
         case DEADLINE:
-            tasks[taskCount] = new Deadline(command.getArg1(), command.getArg2());
-            taskCount += 1;
-            printer.showAdded(tasks[taskCount - 1], taskCount);
+            addTask(new Deadline(command.getParam1(), command.getParam2()));
             break;
 
         case EVENT:
-            tasks[taskCount] = new Event(command.getArg1(), command.getArg2(), command.getArg3());
-            taskCount += 1;
-            printer.showAdded(tasks[taskCount - 1], taskCount);
+            addTask(new Event(command.getParam1(), command.getParam2(), command.getParam3()));
             break;
 
-        case UNKNOWN:
         default:
             printer.showDefault();
             break;
@@ -77,6 +64,26 @@ public class Executor {
 
     public boolean shouldExit() {
         return shouldExit;
+    }
+
+    private void updateMarkStatus(Command command, boolean isMark) {
+        if (isNumeric(command.getParam1())) {
+            int index = Integer.parseInt(command.getParam1()) - 1;
+
+            if (isMark) {
+                tasks[index].markTask();
+                printer.showMarked(tasks[index]);
+            } else {
+                tasks[index].unmarkTask();
+                printer.showUnmarked(tasks[index]);
+            }
+        }
+    }
+
+    private void addTask(Task task) {
+        tasks[taskCount] = task;
+        taskCount += 1;
+        printer.showAdded(tasks[taskCount - 1], taskCount);
     }
 
 
