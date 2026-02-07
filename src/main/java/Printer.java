@@ -62,4 +62,10 @@ public class Printer {
         System.out.println(INDENT + DIVIDER_LINE);
         System.out.println(INDENT + DIVIDER_LINE);
     }
+
+    public void showError(String message) {
+        System.out.println(INDENT + DIVIDER_LINE);
+        System.out.println(INDENT + message);
+        System.out.println(INDENT + DIVIDER_LINE);
+    }
 }

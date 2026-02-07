@@ -11,19 +11,7 @@ public class Executor {
         printer.showGreeting();
     }
 
-    public static boolean isNumeric(String s) {
-        if (s == null || s.isEmpty()) {
-            return false;
-        }
-        try {
-            Integer.parseInt(s);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    public void execute(Command command) {
+    public void execute(Command command) throws NexBotException{
 
         switch (command.getType()) {
         case BYE:
@@ -66,21 +54,24 @@ public class Executor {
         return shouldExit;
     }
 
-    private void updateMarkStatus(Command command, boolean isMark) {
-        if (isNumeric(command.getParam1())) {
-            int index = Integer.parseInt(command.getParam1()) - 1;
-
-            if (isMark) {
-                tasks[index].markTask();
-                printer.showMarked(tasks[index]);
-            } else {
-                tasks[index].unmarkTask();
-                printer.showUnmarked(tasks[index]);
-            }
+    private void updateMarkStatus (Command command, boolean isMark) throws NexBotException {
+        int index = Integer.parseInt(command.getParam1()) - 1;
+        if (index < 0 || index >= taskCount){
+            throw new InvalidTaskNumberException();
+        }
+        if (isMark) {
+            tasks[index].markTask();
+            printer.showMarked(tasks[index]);
+        } else {
+            tasks[index].unmarkTask();
+            printer.showUnmarked(tasks[index]);
         }
     }
 
-    private void addTask(Task task) {
+    private void addTask(Task task) throws NexBotException{
+        if (taskCount >= MAX_TASKS){
+            throw new TaskLimitException(MAX_TASKS);
+        }
         tasks[taskCount] = task;
         taskCount += 1;
         printer.showAdded(tasks[taskCount - 1], taskCount);
