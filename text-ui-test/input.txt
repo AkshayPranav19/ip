@@ -10,4 +10,11 @@ list
 unmark 2
 unmark 6
 list
+todo
+mark 1000
+unmark 10000
+event
+deadline dodod
+todo
+blah
 bye
