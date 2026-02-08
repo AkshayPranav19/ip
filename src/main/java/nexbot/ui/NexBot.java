@@ -1,3 +1,10 @@
+package nexbot.ui;
+
+import nexbot.command.Command;
+import nexbot.command.Executor;
+import nexbot.command.Parser;
+import nexbot.exception.NexBotException;
+
 import java.util.Scanner;
 
 public class NexBot {
@@ -11,10 +18,10 @@ public class NexBot {
 
         do {
             String userInput = scanner.nextLine().trim();
-            try{
+            try {
                 Command command = Parser.parseCommand(userInput);
                 executor.execute(command);
-            } catch (NexBotException e){
+            } catch (NexBotException e) {
                 printer.showError(e.getMessage());
             }
 

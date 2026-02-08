@@ -1,3 +1,14 @@
+package nexbot.command;
+
+import nexbot.exception.InvalidTaskNumberException;
+import nexbot.exception.NexBotException;
+import nexbot.exception.TaskLimitException;
+import nexbot.task.Deadline;
+import nexbot.task.Event;
+import nexbot.task.Task;
+import nexbot.task.ToDo;
+import nexbot.ui.Printer;
+
 public class Executor {
 
     private static final int MAX_TASKS = 100;
@@ -11,9 +22,9 @@ public class Executor {
         printer.showGreeting();
     }
 
-    public void execute(Command command) throws NexBotException{
+    public void execute(Command command) throws NexBotException {
 
-        switch (command.getType()) {
+        switch (command.type()) {
         case BYE:
             printer.showBye();
             this.shouldExit = true;
@@ -32,15 +43,15 @@ public class Executor {
             break;
 
         case TODO:
-            addTask(new ToDo(command.getParam1()));
+            addTask(new ToDo(command.param1()));
             break;
 
         case DEADLINE:
-            addTask(new Deadline(command.getParam1(), command.getParam2()));
+            addTask(new Deadline(command.param1(), command.param2()));
             break;
 
         case EVENT:
-            addTask(new Event(command.getParam1(), command.getParam2(), command.getParam3()));
+            addTask(new Event(command.param1(), command.param2(), command.param3()));
             break;
 
         default:
@@ -54,9 +65,9 @@ public class Executor {
         return shouldExit;
     }
 
-    private void updateMarkStatus (Command command, boolean isMark) throws NexBotException {
-        int index = Integer.parseInt(command.getParam1()) - 1;
-        if (index < 0 || index >= taskCount){
+    private void updateMarkStatus(Command command, boolean isMark) throws NexBotException {
+        int index = Integer.parseInt(command.param1()) - 1;
+        if (index < 0 || index >= taskCount) {
             throw new InvalidTaskNumberException();
         }
         if (isMark) {
@@ -68,8 +79,8 @@ public class Executor {
         }
     }
 
-    private void addTask(Task task) throws NexBotException{
-        if (taskCount >= MAX_TASKS){
+    private void addTask(Task task) throws NexBotException {
+        if (taskCount >= MAX_TASKS) {
             throw new TaskLimitException(MAX_TASKS);
         }
         tasks[taskCount] = task;

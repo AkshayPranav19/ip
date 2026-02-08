@@ -1,3 +1,7 @@
+package nexbot.ui;
+
+import nexbot.task.Task;
+
 public class Printer {
     public static final String INDENT = "     ";
     public static final String DIVIDER_LINE = "____________________________________________________________";

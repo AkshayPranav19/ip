@@ -1,3 +1,5 @@
+package nexbot.exception;
+
 public class TaskLimitException extends NexBotException {
 
     public TaskLimitException(int limit) {

@@ -1,3 +1,5 @@
+package nexbot.task;
+
 public class Task {
     private final String taskDescription;
     private boolean isDone;
