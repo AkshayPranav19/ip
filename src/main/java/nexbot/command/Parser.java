@@ -8,10 +8,10 @@ import nexbot.exception.NexBotException;
 public class Parser {
     public static final String INDENT = "     ";
     public static final String TODO_FORMAT = INDENT + "todo <description>";
-    public static final String DEADLINE_FORMAT =  INDENT + "deadline <description> /by <time>";
-    public static final String EVENT_FORMAT =  INDENT + "event <description> /from <time> /to <time>";
-    public static final String MARK_FORMAT =  INDENT + "mark <task number>";
-    public static final String UNMARK_FORMAT =  INDENT + "unmark <task number>";
+    public static final String DEADLINE_FORMAT = INDENT + "deadline <description> /by <time>";
+    public static final String EVENT_FORMAT = INDENT + "event <description> /from <time> /to <time>";
+    public static final String MARK_FORMAT = INDENT + "mark <task number>";
+    public static final String UNMARK_FORMAT = INDENT + "unmark <task number>";
 
     private static final String BY_DELIMITER = " /by ";
     private static final String FROM_DELIMITER = " /from ";
