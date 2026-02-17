@@ -2,19 +2,18 @@ package nexbot.command;
 
 import nexbot.exception.InvalidTaskNumberException;
 import nexbot.exception.NexBotException;
-import nexbot.exception.TaskLimitException;
 import nexbot.task.Deadline;
 import nexbot.task.Event;
 import nexbot.task.Task;
 import nexbot.task.ToDo;
 import nexbot.ui.Printer;
 
+import java.util.ArrayList;
+
 public class Executor {
 
-    private static final int MAX_TASKS = 100;
     private static final Printer printer = new Printer();
-    private static final Task[] tasks = new Task[MAX_TASKS];
-    private static int taskCount = 0;
+    private final ArrayList<Task> tasks = new ArrayList<>();
     private boolean shouldExit;
 
     public Executor() {
@@ -31,7 +30,7 @@ public class Executor {
             break;
 
         case LIST:
-            printer.showTasks(tasks, taskCount);
+            printer.showTasks(tasks);
             break;
 
         case MARK:
@@ -54,6 +53,11 @@ public class Executor {
             addTask(new Event(command.param1(), command.param2(), command.param3()));
             break;
 
+        case DELETE:
+            deleteTask(command);
+            break;
+
+
         default:
             printer.showDefault();
             break;
@@ -67,25 +71,33 @@ public class Executor {
 
     private void updateMarkStatus(Command command, boolean isMark) throws NexBotException {
         int index = Integer.parseInt(command.param1()) - 1;
-        if (index < 0 || index >= taskCount) {
+        if (index < 0 || index >= tasks.size()) {
             throw new InvalidTaskNumberException();
         }
+        Task task = tasks.get(index);
         if (isMark) {
-            tasks[index].markTask();
-            printer.showMarked(tasks[index]);
+            task.markTask();
+            printer.showMarked(task);
         } else {
-            tasks[index].unmarkTask();
-            printer.showUnmarked(tasks[index]);
+            task.unmarkTask();
+            printer.showUnmarked(task);
         }
     }
 
     private void addTask(Task task) throws NexBotException {
-        if (taskCount >= MAX_TASKS) {
-            throw new TaskLimitException(MAX_TASKS);
+        tasks.add(task);
+        printer.showAdded(task, tasks.size());
+    }
+
+    private void deleteTask(Command command) throws NexBotException {
+        int index = Integer.parseInt(command.param1()) - 1;
+
+        if (index < 0 || index >= tasks.size()) {
+            throw new InvalidTaskNumberException();
         }
-        tasks[taskCount] = task;
-        taskCount += 1;
-        printer.showAdded(tasks[taskCount - 1], taskCount);
+
+        Task removed = tasks.remove(index);
+        printer.showDeleted(removed, tasks.size());
     }
 
 

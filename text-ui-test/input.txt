@@ -17,4 +17,7 @@ event
 deadline dodod
 todo
 blah
+delete
+delete 1
+list
 bye

@@ -1,99 +1,115 @@
-     ____________________________________________________________
-     Hello! I'm
-       _   _            ____        _
-      | \ | | _____  __| __ )  ___ | |_
-      |  \| |/ _ \ \/ /|  _ \ / _ \| __|
-      | |\  |  __/>  < | |_) | (_) | |_
-      |_| \_|\___/_/\_\|____/ \___/ \__|
+    ____________________________________________________________
+    Hello! I'm
+    _   _            ____        _
+    | \ | | _____  __| __ )  ___ | |_
+    |  \| |/ _ \ \/ /|  _ \ / _ \| __|
+    | |\  |  __/>  < | |_) | (_) | |_
+    |_| \_|\___/_/\_\|____/ \___/ \__|
 
-     NexBot is your personal task manager. I'm here to help. What can I do for you?
+    NexBot is your personal task manager. I'm here to help. What can I do for you?
+    ____________________________________________________________
+    ____________________________________________________________
+    Got it. I've added this task:
+    [T][ ] read book
+    Now you have 1 tasks in the list.
+    ____________________________________________________________
+    ____________________________________________________________
+    Got it. I've added this task:
+    [D][ ] return book (by: Sunday)
+    Now you have 2 tasks in the list.
+    ____________________________________________________________
+    ____________________________________________________________
+    Got it. I've added this task:
+    [E][ ] project meeting (from: Monday to: Tuesday)
+    Now you have 3 tasks in the list.
+    ____________________________________________________________
+    ____________________________________________________________
+    Got it. I've added this task:
+    [T][ ] gym
+    Now you have 4 tasks in the list.
+    ____________________________________________________________
+    ____________________________________________________________
+    Got it. I've added this task:
+    [D][ ] submit report (by: Friday)
+    Now you have 5 tasks in the list.
+    ____________________________________________________________
+    ____________________________________________________________
+    Got it. I've added this task:
+    [E][ ] dinner (from: 7pm to: 9pm)
+    Now you have 6 tasks in the list.
+    ____________________________________________________________
+    ____________________________________________________________
+    Nice! I've marked this task as done:
+    [D][X] return book (by: Sunday)
+    ____________________________________________________________
+    ____________________________________________________________
+    Nice! I've marked this task as done:
+    [E][X] dinner (from: 7pm to: 9pm)
+    ____________________________________________________________
+    ____________________________________________________________
+    1. [T][ ] read book
+    2. [D][X] return book (by: Sunday)
+    3. [E][ ] project meeting (from: Monday to: Tuesday)
+    4. [T][ ] gym
+    5. [D][ ] submit report (by: Friday)
+    6. [E][X] dinner (from: 7pm to: 9pm)
+    ____________________________________________________________
+    ____________________________________________________________
+    OK, I've marked this task as not done yet:
+    [D][ ] return book (by: Sunday)
+    ____________________________________________________________
+    ____________________________________________________________
+    OK, I've marked this task as not done yet:
+    [E][ ] dinner (from: 7pm to: 9pm)
+    ____________________________________________________________
+    ____________________________________________________________
+    1. [T][ ] read book
+    2. [D][ ] return book (by: Sunday)
+    3. [E][ ] project meeting (from: Monday to: Tuesday)
+    4. [T][ ] gym
+    5. [D][ ] submit report (by: Friday)
+    6. [E][ ] dinner (from: 7pm to: 9pm)
+    ____________________________________________________________
+    ____________________________________________________________
+    You used Invalid command format. Learn the correct Format:
+    todo <description>
+    ____________________________________________________________
+    ____________________________________________________________
+    NexBot is upset! You Entered a wrong task number!
+    ____________________________________________________________
+    ____________________________________________________________
+    NexBot is upset! You Entered a wrong task number!
+    ____________________________________________________________
+    ____________________________________________________________
+    You used Invalid command format. Learn the correct Format:
+    event <description> /from <time> /to <time>
+    ____________________________________________________________
+    ____________________________________________________________
+    You used Invalid command format. Learn the correct Format:
+    deadline <description> /by <time>
+    ____________________________________________________________
+    ____________________________________________________________
+    You used Invalid command format. Learn the correct Format:
+    todo <description>
+    ____________________________________________________________
+    ____________________________________________________________
+    NexBot thinks this is an unknown syntax. Give correct Syntax!
+    ____________________________________________________________
+     ____________________________________________________________
+     You used Invalid command format. Learn the correct Format:
+      delete <task number>
      ____________________________________________________________
      ____________________________________________________________
-     Got it. I've added this task:
+     Noted. I've removed this task:
           [T][ ] read book
-     Now you have 1 tasks in the list.
-     ____________________________________________________________
-     ____________________________________________________________
-     Got it. I've added this task:
-          [D][ ] return book (by: Sunday)
-     Now you have 2 tasks in the list.
-     ____________________________________________________________
-     ____________________________________________________________
-     Got it. I've added this task:
-          [E][ ] project meeting (from: Monday to: Tuesday)
-     Now you have 3 tasks in the list.
-     ____________________________________________________________
-     ____________________________________________________________
-     Got it. I've added this task:
-          [T][ ] gym
-     Now you have 4 tasks in the list.
-     ____________________________________________________________
-     ____________________________________________________________
-     Got it. I've added this task:
-          [D][ ] submit report (by: Friday)
      Now you have 5 tasks in the list.
      ____________________________________________________________
      ____________________________________________________________
-     Got it. I've added this task:
-          [E][ ] dinner (from: 7pm to: 9pm)
-     Now you have 6 tasks in the list.
-     ____________________________________________________________
-     ____________________________________________________________
-     Nice! I've marked this task as done:
-          [D][X] return book (by: Sunday)
-     ____________________________________________________________
-     ____________________________________________________________
-     Nice! I've marked this task as done:
-          [E][X] dinner (from: 7pm to: 9pm)
-     ____________________________________________________________
-     ____________________________________________________________
-     1. [T][ ] read book
-     2. [D][X] return book (by: Sunday)
-     3. [E][ ] project meeting (from: Monday to: Tuesday)
-     4. [T][ ] gym
-     5. [D][ ] submit report (by: Friday)
-     6. [E][X] dinner (from: 7pm to: 9pm)
-     ____________________________________________________________
-     ____________________________________________________________
-     OK, I've marked this task as not done yet:
-          [D][ ] return book (by: Sunday)
-     ____________________________________________________________
-     ____________________________________________________________
-     OK, I've marked this task as not done yet:
-          [E][ ] dinner (from: 7pm to: 9pm)
-     ____________________________________________________________
-     ____________________________________________________________
-     1. [T][ ] read book
-     2. [D][ ] return book (by: Sunday)
-     3. [E][ ] project meeting (from: Monday to: Tuesday)
-     4. [T][ ] gym
-     5. [D][ ] submit report (by: Friday)
-     6. [E][ ] dinner (from: 7pm to: 9pm)
-     ____________________________________________________________
-     ____________________________________________________________
-     You used Invalid command format. Learn the correct Format:
-      todo <description>
-     ____________________________________________________________
-     ____________________________________________________________
-     NexBot is upset! You Entered a wrong task number!
-     ____________________________________________________________
-     ____________________________________________________________
-     NexBot is upset! You Entered a wrong task number!
-     ____________________________________________________________
-     ____________________________________________________________
-     You used Invalid command format. Learn the correct Format:
-      event <description> /from <time> /to <time>
-     ____________________________________________________________
-     ____________________________________________________________
-     You used Invalid command format. Learn the correct Format:
-      deadline <description> /by <time>
-     ____________________________________________________________
-     ____________________________________________________________
-     You used Invalid command format. Learn the correct Format:
-      todo <description>
-     ____________________________________________________________
-     ____________________________________________________________
-     NexBot thinks this is an unknown syntax. Give correct Syntax!
+     1. [D][ ] return book (by: Sunday)
+     2. [E][ ] project meeting (from: Monday to: Tuesday)
+     3. [T][ ] gym
+     4. [D][ ] submit report (by: Friday)
+     5. [E][ ] dinner (from: 7pm to: 9pm)
      ____________________________________________________________
      ____________________________________________________________
      Bye. Hope to see you again soon!

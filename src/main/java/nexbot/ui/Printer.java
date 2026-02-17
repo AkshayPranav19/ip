@@ -2,6 +2,8 @@ package nexbot.ui;
 
 import nexbot.task.Task;
 
+import java.util.ArrayList;
+
 public class Printer {
     public static final String INDENT = "     ";
     public static final String DIVIDER_LINE = "____________________________________________________________";
@@ -27,13 +29,14 @@ public class Printer {
         System.out.println(INDENT + DIVIDER_LINE);
     }
 
-    public void showTasks(Task[] tasks, int taskCount) {
+    public void showTasks(ArrayList<Task> tasks) {
+        int taskCount = tasks.size();
         System.out.println(INDENT + DIVIDER_LINE);
         if (taskCount == 0) {
             System.out.println(INDENT + "No tasks for you. NexBot wants you to take a good rest");
         } else {
             for (int i = 0; i < taskCount; i += 1) {
-                System.out.printf(INDENT + "%d. %s%n", i + 1, tasks[i].toString());
+                System.out.printf(INDENT + "%d. %s%n", i + 1, tasks.get(i).toString());
             }
         }
         System.out.println(INDENT + DIVIDER_LINE);
@@ -72,4 +75,14 @@ public class Printer {
         System.out.println(INDENT + message);
         System.out.println(INDENT + DIVIDER_LINE);
     }
+
+    public void showDeleted(Task task, int taskCount) {
+        System.out.println(INDENT + DIVIDER_LINE);
+        System.out.println(INDENT + "Noted. I've removed this task:");
+        System.out.println(INDENT + INDENT + task.toString());
+        System.out.println(INDENT + "Now you have " + taskCount + " tasks in the list.");
+        System.out.println(INDENT + DIVIDER_LINE);
+    }
+
+
 }
