@@ -2,6 +2,7 @@ package nexbot.command;
 
 import nexbot.exception.InvalidTaskNumberException;
 import nexbot.exception.NexBotException;
+import nexbot.storage.Storage;
 import nexbot.task.Deadline;
 import nexbot.task.Event;
 import nexbot.task.Task;
@@ -13,11 +14,13 @@ import java.util.ArrayList;
 public class Executor {
 
     private static final Printer printer = new Printer();
-    private final ArrayList<Task> tasks = new ArrayList<>();
+    private final Storage storage = new Storage();
+    private final ArrayList<Task> tasks;
     private boolean shouldExit;
 
     public Executor() {
         this.shouldExit = false;
+        this.tasks = storage.load();
         printer.showGreeting();
     }
 
@@ -77,15 +80,18 @@ public class Executor {
         Task task = tasks.get(index);
         if (isMark) {
             task.markTask();
+            storage.save(tasks);
             printer.showMarked(task);
         } else {
             task.unmarkTask();
+            storage.save(tasks);
             printer.showUnmarked(task);
         }
     }
 
     private void addTask(Task task) throws NexBotException {
         tasks.add(task);
+        storage.save(tasks);
         printer.showAdded(task, tasks.size());
     }
 
@@ -97,6 +103,7 @@ public class Executor {
         }
 
         Task removed = tasks.remove(index);
+        storage.save(tasks);
         printer.showDeleted(removed, tasks.size());
     }
 

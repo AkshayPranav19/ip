@@ -10,4 +10,11 @@ public class ToDo extends Task {
     public String toString() {
         return "[T]" + getStatusIcon() + " " + getTaskDescription();
     }
+
+    @Override
+    public String toStorageString() {
+        String doneFlag = isDone() ? "1" : "0";
+        return "T | " + doneFlag + " | " + getTaskDescription();
+    }
+
 }
