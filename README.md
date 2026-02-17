@@ -1,6 +1,6 @@
-# nexbot.ui.NexBot project template
+# NexBot — Personal Task Manager
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _NexBot_. Given below are instructions on how to use it.
+NexBot is a command-line task management application written in Java. It helps users manage ToDo, Deadline, and Event tasks efficiently through a text-based interface.
 
 ## Setting up in Intellij
 
