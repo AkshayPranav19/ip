@@ -84,5 +84,14 @@ public class Printer {
         System.out.println(INDENT + DIVIDER_LINE);
     }
 
+    public void showMatchingTasks(ArrayList<Task> tasks) {
+        System.out.println(INDENT + DIVIDER_LINE);
+        System.out.println(INDENT + "Here are the matching tasks in your list:");
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println(INDENT + (i + 1) + "." + tasks.get(i));
+        }
+        System.out.println(INDENT + DIVIDER_LINE);
+    }
+
 
 }
