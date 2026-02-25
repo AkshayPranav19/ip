@@ -13,11 +13,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Handles loading and saving of tasks to persistent storage.
+ * <p>
+ * Tasks are stored in a text file and reconstructed when the application starts.
+ */
 public class Storage {
 
     private static final String FILE_PATH = "data/nexbot.txt";
     private static final String FIELD_DELIMITER_REGEX = "\\s*\\|\\s*";
 
+    /**
+     * Loads tasks from the storage file.
+     *
+     * @return List of tasks read from storage. Returns an empty list if no data exists.
+     */
     public ArrayList<Task> load() {
         ArrayList<Task> taskList = new ArrayList<>();
         File dataFile = new File(FILE_PATH);
@@ -48,6 +58,11 @@ public class Storage {
         return taskList;
     }
 
+    /**
+     * Saves the given list of tasks to the storage file.
+     *
+     * @param taskList List of tasks to be saved.
+     */
     public void save(ArrayList<Task> taskList) {
         File dataFile = new File(FILE_PATH);
 
@@ -66,6 +81,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Ensures that the data directory and file exist, creating them if necessary.
+     *
+     * @param dataFile File representing the storage location.
+     * @throws IOException If the file cannot be created.
+     */
     private void ensureFileExists(File dataFile) throws IOException {
         File parentDirectory = dataFile.getParentFile();
 
@@ -84,6 +105,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Parses a line from the storage file into a {@link Task}.
+     *
+     * @param line A single line from the storage file.
+     * @return The parsed task, or {@code null} if the line is corrupted or invalid.
+     */
     private Task parseTaskOrNull(String line) {
         String[] fields = line.split(FIELD_DELIMITER_REGEX);
 
