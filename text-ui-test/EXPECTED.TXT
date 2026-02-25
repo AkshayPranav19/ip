@@ -7,6 +7,18 @@
     |_| \_|\___/_/\_\|____/ \___/ \__|
 
     NexBot is your personal task manager. I'm here to help. What can I do for you?
+
+     ********************** COMMANDS **********************
+     Add a todo task                          --> todo <description>
+     Add a deadline task                      --> deadline <description> /by <dd MM yyyy HHmm>
+     Add an event task                        --> event <description> /from <dd MM yyyy HHmm> /to <dd MM yyyy HHmm>
+     List all tasks                           --> list
+     Mark task as done                        --> mark <task number>
+     Unmark task                              --> unmark <task number>
+     Delete task                              --> delete <task number>
+     Filter tasks by date                     --> filter <yyyy-MM-dd>
+     Find tasks by keyword                    --> find <keyword>
+     Exit NexBot                              --> bye
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:

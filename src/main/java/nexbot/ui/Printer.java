@@ -27,6 +27,20 @@ public class Printer {
         System.out.println(INDENT + "Hello! I'm");
         System.out.println(logo);
         System.out.println(INDENT + "NexBot is your personal task manager. I'm here to help. What can I do for you?");
+
+        System.out.println();
+        System.out.println(INDENT + "********************** COMMANDS **********************");
+        System.out.println(INDENT + "Add a todo task                          --> todo <description>");
+        System.out.println(INDENT + "Add a deadline task                      --> deadline <description> /by <dd MM yyyy HHmm>");
+        System.out.println(INDENT + "Add an event task                        --> event <description> /from <dd MM yyyy HHmm> /to <dd MM yyyy HHmm>");
+        System.out.println(INDENT + "List all tasks                           --> list");
+        System.out.println(INDENT + "Mark task as done                        --> mark <task number>");
+        System.out.println(INDENT + "Unmark task                              --> unmark <task number>");
+        System.out.println(INDENT + "Delete task                              --> delete <task number>");
+        System.out.println(INDENT + "Filter tasks by date                     --> filter <yyyy-MM-dd>");
+        System.out.println(INDENT + "Find tasks by keyword                    --> find <keyword>");
+        System.out.println(INDENT + "Exit NexBot                              --> bye");
+
         System.out.println(INDENT + DIVIDER_LINE);
     }
 
@@ -137,6 +151,11 @@ public class Printer {
      */
     public void showMatchingTasks(ArrayList<Task> tasks) {
         System.out.println(INDENT + DIVIDER_LINE);
+        if (tasks.isEmpty()) {
+            System.out.println(INDENT + "No items found");
+            System.out.println(INDENT + DIVIDER_LINE);
+            return;
+        }
         System.out.println(INDENT + "Here are the matching tasks in your list:");
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println(INDENT + (i + 1) + "." + tasks.get(i));
