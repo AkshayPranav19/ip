@@ -62,6 +62,10 @@ public class Executor {
             filterByDate(command);
             break;
 
+        case FIND:
+            filterByKeyword(command);
+            break;
+
         default:
             printer.showDefault();
             break;
@@ -112,5 +116,16 @@ public class Executor {
             }
         }
         printer.showTasks(matches);
+    }
+
+    private void filterByKeyword(Command command) {
+        String keyword = command.param1().toLowerCase();
+        ArrayList<Task> matches = new ArrayList<>();
+        for (Task t : tasks.getTasks()) {
+            if (t.getTaskDescription().toLowerCase().contains(keyword)) {
+                matches.add(t);
+            }
+        }
+        printer.showMatchingTasks(matches);
     }
 }

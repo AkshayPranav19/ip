@@ -14,6 +14,7 @@ public class Parser {
     public static final String UNMARK_FORMAT = INDENT + "unmark <task number>";
     public static final String DELETE_FORMAT = INDENT + "delete <task number>";
     public static final String FILTER_FORMAT = INDENT + "filter dd MM yyyy";
+    public static final String FIND_FORMAT = INDENT + "find <keyword>";
 
     private static final String BY_DELIMITER = " /by ";
     private static final String FROM_DELIMITER = " /from ";
@@ -59,6 +60,10 @@ public class Parser {
         case "filter":
             validateNotBlank(arguments, FILTER_FORMAT);
             return new Command(CommandType.FILTER, arguments);
+
+        case "find":
+            validateNotBlank(arguments, FIND_FORMAT);
+            return new Command(CommandType.FIND, arguments);
 
         default:
             throw new InvalidCommandException();
