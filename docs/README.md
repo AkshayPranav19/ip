@@ -36,15 +36,14 @@ Prerequisites: JDK 17, update Intellij to the most recent version.
 
 
 ## Commands
-| Command                                                             | Description         |
-|---------------------------------------------------------------------|---------------------|
-| `todo <description>`                                                | Add a todo task     |
-| `deadline <description> /by <dd MM yyyy HHmm>`                      | Add a deadline task |
-| `event <description> /from <dd MM yyyy HHmm> /to <dd MM yyyy HHmm>` | Add an event task   |
-| `list`                                                              | List all tasks      |
-| `mark <task number>`                                                | Mark task as done   |
-| `unmark <task number>`                                              | Unmark task         |
-| `delete <task number>`                                              | Delete a task       |
-| `filter <dd MM yyyy>`                                               | Filter by date      |
-| `find <keyword>`                                                    | Find by keyword     |
-| `bye`                                                               | Exit NexBot         |
+
+1. `todo <description>` — Add a todo task
+2. `deadline <description> /by <dd MM yyyy HHmm>` — Add a deadline task
+3. `event <description> /from <dd MM yyyy HHmm> /to <dd MM yyyy HHmm>` — Add an event task
+4. `list` — List all tasks
+5. `mark <task number>` — Mark task as done
+6. `unmark <task number>` — Unmark task
+7. `delete <task number>` — Delete a task
+8. `filter <dd MM yyyy>` — Filter by date
+9. `find <keyword>` — Find by keyword
+10. `bye` — Exit NexBot
