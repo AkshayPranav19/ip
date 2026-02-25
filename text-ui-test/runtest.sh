@@ -12,6 +12,12 @@ then
     rm ACTUAL.TXT
 fi
 
+# delete data folder from previous run
+if [ -d "./data" ]
+then
+    rm -rf ./data
+fi
+
 # compile the code into the bin folder, terminates if error occurred
 find ../src/main/java -name "*.java" > sources.txt
 if ! javac -cp ../src/main/java -Xlint:none -d ../bin @sources.txt
@@ -38,4 +44,3 @@ else
     echo "Test result: FAILED"
     exit 1
 fi
-

@@ -1,26 +1,20 @@
 package nexbot.command;
 
-import nexbot.exception.InvalidTaskNumberException;
 import nexbot.exception.NexBotException;
 import nexbot.storage.Storage;
-import nexbot.task.Deadline;
-import nexbot.task.Event;
-import nexbot.task.Task;
-import nexbot.task.ToDo;
+import nexbot.task.*;
 import nexbot.ui.Printer;
-
-import java.util.ArrayList;
 
 public class Executor {
 
     private static final Printer printer = new Printer();
     private final Storage storage = new Storage();
-    private final ArrayList<Task> tasks;
+    private final TaskList tasks;
     private boolean shouldExit;
 
     public Executor() {
         this.shouldExit = false;
-        this.tasks = storage.load();
+        this.tasks = new TaskList(storage.load());
         printer.showGreeting();
     }
 
@@ -33,7 +27,7 @@ public class Executor {
             break;
 
         case LIST:
-            printer.showTasks(tasks);
+            printer.showTasks(tasks.getTasks());
             break;
 
         case MARK:
@@ -73,37 +67,29 @@ public class Executor {
     }
 
     private void updateMarkStatus(Command command, boolean isMark) throws NexBotException {
-        int index = Integer.parseInt(command.param1()) - 1;
-        if (index < 0 || index >= tasks.size()) {
-            throw new InvalidTaskNumberException();
-        }
-        Task task = tasks.get(index);
+        int taskNumber = Integer.parseInt(command.param1());
+        Task task = tasks.get(taskNumber);
         if (isMark) {
             task.markTask();
-            storage.save(tasks);
+            storage.save(tasks.getTasks());
             printer.showMarked(task);
         } else {
             task.unmarkTask();
-            storage.save(tasks);
+            storage.save(tasks.getTasks());
             printer.showUnmarked(task);
         }
     }
 
     private void addTask(Task task) throws NexBotException {
         tasks.add(task);
-        storage.save(tasks);
+        storage.save(tasks.getTasks());
         printer.showAdded(task, tasks.size());
     }
 
     private void deleteTask(Command command) throws NexBotException {
-        int index = Integer.parseInt(command.param1()) - 1;
-
-        if (index < 0 || index >= tasks.size()) {
-            throw new InvalidTaskNumberException();
-        }
-
-        Task removed = tasks.remove(index);
-        storage.save(tasks);
+        int taskNumber = Integer.parseInt(command.param1());
+        Task removed = tasks.remove(taskNumber);
+        storage.save(tasks.getTasks());
         printer.showDeleted(removed, tasks.size());
     }
 

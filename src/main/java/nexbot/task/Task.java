@@ -1,6 +1,6 @@
 package nexbot.task;
 
-public class Task {
+public abstract class Task {
     private final String taskDescription;
     private boolean isDone;
 
@@ -30,11 +30,7 @@ public class Task {
     }
 
     @Override
-    public String toString() {
-        return "";
-    }
+    public abstract String toString();
 
-    public String toStorageString() {
-        return "";
-    }
+    public abstract String toStorageString();
 }
