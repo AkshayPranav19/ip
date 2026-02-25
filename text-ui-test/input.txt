@@ -20,4 +20,8 @@ blah
 delete
 delete 1
 list
+todo readbook
+deadline readbook /by 02 05 2026 1420
+list
+find readbook
 bye

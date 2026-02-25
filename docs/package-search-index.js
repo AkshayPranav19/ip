@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"nexbot.command"},{"l":"nexbot.exception"},{"l":"nexbot.storage"},{"l":"nexbot.task"},{"l":"nexbot.ui"},{"l":"nexbot.util"}];updateSearchResults();

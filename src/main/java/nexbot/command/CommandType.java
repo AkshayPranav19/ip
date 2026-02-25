@@ -1,5 +1,10 @@
 package nexbot.command;
 
+/**
+ * Enumerates all supported user command types.
+ * <p>
+ * Each value corresponds to a command recognised by the parser and executed by the application.
+ */
 public enum CommandType {
     BYE,
     LIST,
@@ -9,5 +14,6 @@ public enum CommandType {
     DEADLINE,
     EVENT,
     DELETE,
-    FILTER
+    FILTER,
+    FIND
 }

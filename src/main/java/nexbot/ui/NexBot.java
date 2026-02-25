@@ -7,9 +7,20 @@ import nexbot.exception.NexBotException;
 
 import java.util.Scanner;
 
+/**
+ * Entry point of the NexBot application.
+ * <p>
+ * Handles user input, delegates command parsing to {@link Parser},
+ * and executes commands using {@link Executor}.
+ */
 public class NexBot {
 
-
+    /**
+     * Starts the NexBot application and continuously processes user input
+     * until an exit command is issued.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
