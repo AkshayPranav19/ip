@@ -1,101 +1,50 @@
-# NexBot User Guide
+# NexBot
 
-NexBot is a personal task manager that helps you track todos, deadlines, and events via a command-line interface.
+NexBot is a command-line task management application written in Java. It helps users manage ToDo, Deadline, and Event tasks efficiently through a text-based interface.
 
-![NexBot Screenshot](screenshot.png)
+![screenshot](./NexBot_demo.png)
 
-## Adding a Todo
+## Quick Start
 
-Adds a simple task with no date.
+1. Ensure you have Java 17 installed on your computer.
+1. Download the latest .jar file from `Releases`.
+1. As the program creates save files in the same folder, you are recommended to create a separate directory for NexBot.
+1. Run the program using the command `java -jar <release-name>.jar`
 
-Example: `todo read book`
-```
-Got it. I've added this task:
-[T][ ] read book
-Now you have 1 tasks in the list.
-```
+## Setting up in Intellij
 
-## Adding a Deadline
+Prerequisites: JDK 17, update Intellij to the most recent version.
 
-Adds a task with a due date and time.
+1. Open Intellij (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project first)
+1. Open the project into Intellij as follows:
+    1. Click `Open`.
+    1. Select the project directory, and click `OK`.
+    1. If there are any further prompts, accept the defaults.
+1. Configure the project to use **JDK 17** (not other versions) as explained in [here](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk).<br>
+   In the same dialog, set the **Project language level** field to the `SDK default` option.
+    1. After that, locate the `src/main/java/nexbot/ui/NexBot.java` file, right-click it, and choose `Run nexbot.ui.NexBot.main()` (if the code editor is showing compile errors, try restarting the IDE). If the setup is correct, you should see something like the below as the output:
+       ```
+       Hello from
+       _   _            ____        _   
+       | \ | | _____  __| __ )  ___ | |_
+       |  \| |/ _ \ \/ /|  _ \ / _ \| __|
+       | |\  |  __/>  < | |_) | (_) | |_
+       |_| \_|\___/_/\_\|____/ \___/ \__|
+       ```
 
-Example: `deadline return book /by 25 02 2026 1800`
-```
-Got it. I've added this task:
-[D][ ] return book (by: 25 02 2026 18:00)
-Now you have 2 tasks in the list.
-```
+**Warning:** Keep the `src\main\java` folder as the root folder for Java files (i.e., don't rename those folders or move Java files to another folder outside of this folder path), as this is the default location some tools (e.g., Gradle) expect to find Java files.
 
-## Adding an Event
 
-Adds a task with a start and end date/time.
-
-Example: `event project meeting /from 25 02 2026 0900 /to 26 02 2026 1700`
-```
-Got it. I've added this task:
-[E][ ] project meeting (from: 25 02 2026 09:00 to: 26 02 2026 17:00)
-Now you have 3 tasks in the list.
-```
-
-## Listing Tasks
-
-Shows all tasks in the list.
-
-Example: `list`
-```
-1. [T][ ] read book
-2. [D][ ] return book (by: 25 02 2026 18:00)
-3. [E][ ] project meeting (from: 25 02 2026 09:00 to: 26 02 2026 17:00)
-```
-
-## Marking a Task
-
-Marks a task as done.
-
-Example: `mark 1`
-```
-Nice! I've marked this task as done:
-[T][X] read book
-```
-
-## Unmarking a Task
-
-Marks a task as not done.
-
-Example: `unmark 1`
-```
-OK, I've marked this task as not done yet:
-[T][ ] read book
-```
-
-## Deleting a Task
-
-Removes a task from the list.
-
-Example: `delete 1`
-```
-Noted. I've removed this task:
-     [T][ ] read book
-Now you have 2 tasks in the list.
-```
-
-## Finding Tasks
-
-Searches for tasks by keyword.
-
-Example: `find book`
-```
-Here are the matching tasks in your list:
-1.[T][ ] read book
-2.[D][ ] return book (by: 25 02 2026 18:00)
-```
-
-## Exiting NexBot
-
-Exits the application.
-
-Example: `bye`
-```
-Bye. Hope to see you again soon!
-Shutting down NexBot...
-```
+## Commands
+| Command                                                             | Description         |
+|---------------------------------------------------------------------|---------------------|
+| `todo <description>`                                                | Add a todo task     |
+| `deadline <description> /by <dd MM yyyy HHmm>`                      | Add a deadline task |
+| `event <description> /from <dd MM yyyy HHmm> /to <dd MM yyyy HHmm>` | Add an event task   |
+| `list`                                                              | List all tasks      |
+| `mark <task number>`                                                | Mark task as done   |
+| `unmark <task number>`                                              | Unmark task         |
+| `delete <task number>`                                              | Delete a task       |
+| `filter <dd MM yyyy>`                                               | Filter by date      |
+| `find <keyword>`                                                    | Find by keyword     |
+| `bye`                                                               | Exit NexBot         |
