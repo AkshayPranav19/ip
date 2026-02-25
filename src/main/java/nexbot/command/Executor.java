@@ -4,6 +4,10 @@ import nexbot.exception.NexBotException;
 import nexbot.storage.Storage;
 import nexbot.task.*;
 import nexbot.ui.Printer;
+import nexbot.util.DateTimeUtil;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Executor {
 
@@ -54,6 +58,9 @@ public class Executor {
             deleteTask(command);
             break;
 
+        case FILTER:
+            filterByDate(command);
+            break;
 
         default:
             printer.showDefault();
@@ -93,5 +100,17 @@ public class Executor {
         printer.showDeleted(removed, tasks.size());
     }
 
-
+    private void filterByDate(Command command) throws NexBotException {
+        LocalDate date = DateTimeUtil.parseDateOnly(command.param1(), Parser.FILTER_FORMAT);
+        ArrayList<Task> matches = new ArrayList<>();
+        for (Task t : tasks.getTasks()) {
+            if (t instanceof Deadline d && d.getBy().toLocalDate().equals(date)) {
+                matches.add(t);
+            } else if (t instanceof Event e
+                    && (e.getFrom().toLocalDate().equals(date) || e.getTo().toLocalDate().equals(date))) {
+                matches.add(t);
+            }
+        }
+        printer.showTasks(matches);
+    }
 }

@@ -1,9 +1,9 @@
 todo read book
-deadline return book /by Sunday
-event project meeting /from Monday /to Tuesday
+deadline return book /by 25 02 2026 1800
+event project meeting /from 25 02 2026 0900 /to 26 02 2026 1700
 todo gym
-deadline submit report /by Friday
-event dinner /from 7pm /to 9pm
+deadline submit report /by 28 02 2026 2359
+event dinner /from 25 02 2026 1900 /to 25 02 2026 2100
 mark 2
 mark 6
 list

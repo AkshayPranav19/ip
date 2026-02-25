@@ -1,4 +1,4 @@
-    ____________________________________________________________
+____________________________________________________________
     Hello! I'm
     _   _            ____        _
     | \ | | _____  __| __ )  ___ | |_
@@ -15,12 +15,12 @@
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [D][ ] return book (by: Sunday)
+    [D][ ] return book (by: 25 02 2026 18:00)
     Now you have 2 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [E][ ] project meeting (from: Monday to: Tuesday)
+    [E][ ] project meeting (from: 25 02 2026 09:00 to: 26 02 2026 17:00)
     Now you have 3 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
@@ -30,45 +30,45 @@
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [D][ ] submit report (by: Friday)
+    [D][ ] submit report (by: 28 02 2026 23:59)
     Now you have 5 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [E][ ] dinner (from: 7pm to: 9pm)
+    [E][ ] dinner (from: 25 02 2026 19:00 to: 25 02 2026 21:00)
     Now you have 6 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Nice! I've marked this task as done:
-    [D][X] return book (by: Sunday)
+    [D][X] return book (by: 25 02 2026 18:00)
     ____________________________________________________________
     ____________________________________________________________
     Nice! I've marked this task as done:
-    [E][X] dinner (from: 7pm to: 9pm)
+    [E][X] dinner (from: 25 02 2026 19:00 to: 25 02 2026 21:00)
     ____________________________________________________________
     ____________________________________________________________
     1. [T][ ] read book
-    2. [D][X] return book (by: Sunday)
-    3. [E][ ] project meeting (from: Monday to: Tuesday)
+    2. [D][X] return book (by: 25 02 2026 18:00)
+    3. [E][ ] project meeting (from: 25 02 2026 09:00 to: 26 02 2026 17:00)
     4. [T][ ] gym
-    5. [D][ ] submit report (by: Friday)
-    6. [E][X] dinner (from: 7pm to: 9pm)
+    5. [D][ ] submit report (by: 28 02 2026 23:59)
+    6. [E][X] dinner (from: 25 02 2026 19:00 to: 25 02 2026 21:00)
     ____________________________________________________________
     ____________________________________________________________
     OK, I've marked this task as not done yet:
-    [D][ ] return book (by: Sunday)
+    [D][ ] return book (by: 25 02 2026 18:00)
     ____________________________________________________________
     ____________________________________________________________
     OK, I've marked this task as not done yet:
-    [E][ ] dinner (from: 7pm to: 9pm)
+    [E][ ] dinner (from: 25 02 2026 19:00 to: 25 02 2026 21:00)
     ____________________________________________________________
     ____________________________________________________________
     1. [T][ ] read book
-    2. [D][ ] return book (by: Sunday)
-    3. [E][ ] project meeting (from: Monday to: Tuesday)
+    2. [D][ ] return book (by: 25 02 2026 18:00)
+    3. [E][ ] project meeting (from: 25 02 2026 09:00 to: 26 02 2026 17:00)
     4. [T][ ] gym
-    5. [D][ ] submit report (by: Friday)
-    6. [E][ ] dinner (from: 7pm to: 9pm)
+    5. [D][ ] submit report (by: 28 02 2026 23:59)
+    6. [E][ ] dinner (from: 25 02 2026 19:00 to: 25 02 2026 21:00)
     ____________________________________________________________
     ____________________________________________________________
     You used Invalid command format. Learn the correct Format:
@@ -82,11 +82,11 @@
     ____________________________________________________________
     ____________________________________________________________
     You used Invalid command format. Learn the correct Format:
-    event <description> /from <time> /to <time>
+    event <description> /from dd MM yyyy HHmm /to dd MM yyyy HHmm
     ____________________________________________________________
     ____________________________________________________________
     You used Invalid command format. Learn the correct Format:
-    deadline <description> /by <time>
+    deadline <description> /by dd MM yyyy HHmm
     ____________________________________________________________
     ____________________________________________________________
     You used Invalid command format. Learn the correct Format:
@@ -105,11 +105,11 @@
      Now you have 5 tasks in the list.
      ____________________________________________________________
      ____________________________________________________________
-     1. [D][ ] return book (by: Sunday)
-     2. [E][ ] project meeting (from: Monday to: Tuesday)
+     1. [D][ ] return book (by: 25 02 2026 18:00)
+     2. [E][ ] project meeting (from: 25 02 2026 09:00 to: 26 02 2026 17:00)
      3. [T][ ] gym
-     4. [D][ ] submit report (by: Friday)
-     5. [E][ ] dinner (from: 7pm to: 9pm)
+     4. [D][ ] submit report (by: 28 02 2026 23:59)
+     5. [E][ ] dinner (from: 25 02 2026 19:00 to: 25 02 2026 21:00)
      ____________________________________________________________
      ____________________________________________________________
      Bye. Hope to see you again soon!

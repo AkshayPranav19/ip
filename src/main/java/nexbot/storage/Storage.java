@@ -1,5 +1,6 @@
 package nexbot.storage;
 
+import nexbot.exception.InvalidFormatException;
 import nexbot.task.Deadline;
 import nexbot.task.Event;
 import nexbot.task.Task;
@@ -118,7 +119,12 @@ public class Storage {
                 System.out.println("Skipped corrupted Deadline line: " + line);
                 return null;
             }
-            task = new Deadline(description, fields[3].trim());
+            try {
+                task = new Deadline(description, fields[3].trim());
+            } catch (InvalidFormatException e) {
+                System.out.println("Skipped corrupted Deadline line (invalid date): " + line);
+                return null;
+            }
             break;
 
         case "E":
@@ -126,7 +132,12 @@ public class Storage {
                 System.out.println("Skipped corrupted Event line: " + line);
                 return null;
             }
-            task = new Event(description, fields[3].trim(), fields[4].trim());
+            try {
+                task = new Event(description, fields[3].trim(), fields[4].trim());
+            } catch (InvalidFormatException e) {
+                System.out.println("Skipped corrupted Event line (invalid date): " + line);
+                return null;
+            }
             break;
 
         default:

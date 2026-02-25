@@ -8,12 +8,12 @@ import nexbot.exception.NexBotException;
 public class Parser {
     public static final String INDENT = "     ";
     public static final String TODO_FORMAT = INDENT + "todo <description>";
-    public static final String DEADLINE_FORMAT = INDENT + "deadline <description> /by <time>";
-    public static final String EVENT_FORMAT = INDENT + "event <description> /from <time> /to <time>";
+    public static final String DEADLINE_FORMAT = INDENT + "deadline <description> /by dd MM yyyy HHmm";
+    public static final String EVENT_FORMAT = INDENT + "event <description> /from dd MM yyyy HHmm /to dd MM yyyy HHmm";
     public static final String MARK_FORMAT = INDENT + "mark <task number>";
     public static final String UNMARK_FORMAT = INDENT + "unmark <task number>";
     public static final String DELETE_FORMAT = INDENT + "delete <task number>";
-
+    public static final String FILTER_FORMAT = INDENT + "filter dd MM yyyy";
 
     private static final String BY_DELIMITER = " /by ";
     private static final String FROM_DELIMITER = " /from ";
@@ -55,6 +55,10 @@ public class Parser {
 
         case "delete":
             return parseDelete(arguments);
+
+        case "filter":
+            validateNotBlank(arguments, FILTER_FORMAT);
+            return new Command(CommandType.FILTER, arguments);
 
         default:
             throw new InvalidCommandException();
